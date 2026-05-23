@@ -1,0 +1,16 @@
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/bin/Debug/net10.0/BookStore.Application.deps.json
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/bin/Debug/net10.0/BookStore.Application.dll
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/bin/Debug/net10.0/BookStore.Application.pdb
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.AssemblyInfoInputs.cache
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.AssemblyInfo.cs
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.csproj.CoreCompileInputs.cache
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.sourcelink.json
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.dll
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/refint/BookStore.Application.dll
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.pdb
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/ref/BookStore.Application.dll
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/bin/Debug/net10.0/BookStore.Domain.dll
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/bin/Debug/net10.0/BookStore.Domain.pdb
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStore.Application.csproj.AssemblyReference.cache
+/home/juliomoquenco/Projects/bookstorenet10/src/BookStore.Application/obj/Debug/net10.0/BookStor.D70AE061.Up2Date
