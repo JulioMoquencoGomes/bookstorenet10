@@ -28,8 +28,14 @@ class ReaderListPage extends React.Component {
     async loadReaders() {
         try {
             let res = await readersService.list();
+            
+            res.data.reader.forEach((r, i) => {
+                r.birthday = r.birthday.toString().split('T')[0] ?? "";
+            });
+
             this.setState({ readers: res.data.reader })
-        } catch (error) {
+        } 
+        catch (error) {
             console.log(error);
             alert("Não foi possível listar os leitores.")
         }

@@ -30,8 +30,13 @@ class ReaderDetailPage extends React.Component {
     async loadReader(readerId) {
         try {
             let res = await readersService.getOne(readerId);
+
+            res.data.reader.birthday = 
+                res.data.reader.birthday.toString().split('T')[0] ?? "";
+
             this.setState({ reader: res.data.reader })
-        } catch (error) {
+        } 
+        catch (error) {
             console.log(error);
             alert("Não foi possível carregar o Leitor.")
         }

@@ -20,7 +20,7 @@ class ReaderEditPage extends React.Component {
         this.state = {
             id: null,
             name : '',
-            author : '',
+            birthday : '',
             urlimg: ''
         }
 
@@ -37,6 +37,9 @@ class ReaderEditPage extends React.Component {
         try {
             let res = await readersService.getOne(readerId);
             let reader = res.data.reader;
+
+            reader.birthday = reader.birthday.toString().split('T')[0] ?? "";
+
             this.setState(reader);
         } catch (error) {
             console.log(error);
@@ -46,9 +49,12 @@ class ReaderEditPage extends React.Component {
 
     async sendReader(){
         
+        const birthday = new Date(this.state.birthday);
+        const dateTimeBirthday = birthday.toISOString(); 
+
         let data = {
             name : this.state.name,
-            birthday : this.state.birthday,
+            birthday : dateTimeBirthday,
             urlimg: this.state.urlimg ?? ""
         }
 
@@ -107,7 +113,7 @@ class ReaderEditPage extends React.Component {
 
                     <div className="form-group">
                         <label htmlFor="content">Data de Nascimento</label>
-                        <textarea
+                        <input
                             type="date"
                             className="form-control"
                             id="content"
@@ -118,11 +124,10 @@ class ReaderEditPage extends React.Component {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="batata">Url da imagem</label>
+                        <label>Url da imagem</label>
                         <input
                             type="text"
                             className="form-control"
-                            id="batata"
                             value={this.state.urlimg}
                             onChange={e => this.setState({ urlimg: e.target.value })} />
                     </div>

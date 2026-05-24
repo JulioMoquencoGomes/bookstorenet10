@@ -122,11 +122,10 @@ class BookEditPage extends React.Component {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="batata">Url da imagem</label>
+                        <label>Url da imagem</label>
                         <input
                             type="text"
                             className="form-control"
-                            id="batata"
                             value={this.state.urlimg}
                             onChange={e => this.setState({ urlimg: e.target.value })} />
                     </div>
