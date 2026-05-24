@@ -19,7 +19,7 @@ docker compose build
 docker compose up
 \
 \
-**Aplicação backend sendo executada, url sendo utilizada para teste:** http://localhost:8080/book
+**Aplicação backend sendo executada, url sendo utilizada para teste:** http://localhost:8080/api/book
 \
 \
 ![Books](Images/backend.png)

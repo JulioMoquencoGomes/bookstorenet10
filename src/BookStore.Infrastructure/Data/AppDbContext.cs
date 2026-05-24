@@ -8,6 +8,7 @@ namespace BookStore.Infrastructure.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
     
         public DbSet<Book> Books => Set<Book>();
+        public DbSet<Reader> Readers => Set<Reader>();
     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace BookStore.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BookController : ControllerBase
     {
         private readonly BookService _bookService;
