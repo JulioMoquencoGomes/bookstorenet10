@@ -9,7 +9,7 @@ namespace BookStore.Tests;
 public class BookServiceTests
 {
     [Fact]
-    public void GetBySpecificId()
+    public void GetByIdSpecific()
     {
         var newGuid = Guid.NewGuid();
         var mockRepo = new Mock<IBookRepository>();
@@ -25,7 +25,7 @@ public class BookServiceTests
     }
 
     [Fact]
-    public void SavingWithAllParametersNeed()
+    public void SavingWithAllNeedParameters()
     {
         var newGuid = Guid.NewGuid();
         var mockRepo = new Mock<IBookRepository>();
