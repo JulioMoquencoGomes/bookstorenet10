@@ -17,18 +17,32 @@ namespace BookStore.Infrastructure.Repositories
         
         public Reader? GetById(Guid id) => _dbContext.Readers.FirstOrDefault(u => u.Id == id);
         
-        public Reader Add(Reader entity)
+        public bool Add(Reader entity)
         {
-            _dbContext.Add(entity);
-            _dbContext.SaveChanges();
-            return entity;
+            try
+            {
+                _dbContext.Add(entity);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            catch(Exception err)
+            {
+                return false;
+            }
         }
 
-        public Reader Update(Reader entity)
+        public bool Update(Reader entity)
         {
-            _dbContext.Update(entity);
-            _dbContext.SaveChanges();
-            return entity;
+            try
+            {
+                _dbContext.Update(entity);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            catch(Exception err)
+            {
+                return false;
+            }
         }
 
         public bool Delete(Guid id)

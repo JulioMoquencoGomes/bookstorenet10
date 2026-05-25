@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using BookStore.Domain.Entities;
 
 namespace BookStore.Application.Interfaces
@@ -8,8 +7,8 @@ namespace BookStore.Application.Interfaces
         IEnumerable<Book> GetAll();
         Book? GetById(Guid id);
 
-        Book Add(Book entity);
-        Book Update(Book entity);
+        bool Add(Book entity);
+        bool Update(Book entity);
 
         bool Delete(Guid id);
         bool Remove(Guid id);

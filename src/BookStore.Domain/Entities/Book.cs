@@ -1,5 +1,4 @@
-﻿using System.Net;
-
+﻿
 namespace BookStore.Domain.Entities;
 
 public class Book: TrackableEntity

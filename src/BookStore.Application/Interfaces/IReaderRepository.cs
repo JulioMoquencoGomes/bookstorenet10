@@ -8,8 +8,8 @@ namespace BookStore.Application.Interfaces
         IEnumerable<Reader> GetAll();
         Reader? GetById(Guid id);
 
-        Reader Add(Reader entity);
-        Reader Update(Reader entity);
+        bool Add(Reader entity);
+        bool Update(Reader entity);
 
         bool Delete(Guid id);
         bool Remove(Guid id);

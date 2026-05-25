@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using BookStore.Application.UseCases;
 using BookStore.Domain.Entities;
-using System.Collections.Generic;
 
 namespace BookStore.API.Controllers
 {
@@ -33,8 +32,8 @@ namespace BookStore.API.Controllers
         [HttpPost]
         public JsonResult Post(Reader reader)
         {
-            reader = _readerService.Add(reader);
-            return new JsonResult(new { success = true, reader = reader});
+            var success = _readerService.Add(reader);
+            return new JsonResult(new { success = success});
         }
 
         [HttpPut("{id}")]
@@ -44,8 +43,8 @@ namespace BookStore.API.Controllers
             {
                 return new JsonResult(new { success = false, message = "Not updated"});
             }
-            reader = _readerService.Update(reader);
-            return new JsonResult(new { success = true, reader = reader});
+            var success = _readerService.Update(reader);
+            return new JsonResult(new { success = success});
         }
 
         [HttpDelete("{id}")]
