@@ -30,12 +30,65 @@ public class BookServiceTests
         var newGuid = Guid.NewGuid();
         var mockRepo = new Mock<IBookRepository>();
 
-        var book = new Book(id: newGuid, name: "1984", author: "George Orwell", urlimg: "");
+        var book = new Book(id: newGuid, name: "1984", author: "George Orwell", 
+            urlimg: "https://m.media-amazon.com/images/I/61NAx5pd6XL.jpg");
+
         mockRepo.Setup(repo => repo.Add(book)).Returns(true);
 
         var service = new BookService(mockRepo.Object);
         var result = service.Add(book);
 
         Assert.True(result);
+    }
+
+    [Fact]
+    public void NotSaveWithNameEmpty()
+    {
+        var newGuid = Guid.NewGuid();
+        var mockRepo = new Mock<IBookRepository>();
+
+        var book = new Book(id: newGuid, name: "", author: "George Orwell", 
+            urlimg: "https://m.media-amazon.com/images/I/61NAx5pd6XL.jpg");
+            
+        mockRepo.Setup(repo => repo.Add(book)).Returns(false);
+
+        var service = new BookService(mockRepo.Object);
+        var result = service.Add(book);
+
+        Assert.False(result);
+    }
+
+    [Fact]
+    public void NotSaveWithAuthorEmpty()
+    {
+        var newGuid = Guid.NewGuid();
+        var mockRepo = new Mock<IBookRepository>();
+
+        var book = new Book(id: newGuid, name: "1984", author: "", 
+            urlimg: "https://m.media-amazon.com/images/I/61NAx5pd6XL.jpg");
+            
+        mockRepo.Setup(repo => repo.Add(book)).Returns(false);
+
+        var service = new BookService(mockRepo.Object);
+        var result = service.Add(book);
+
+        Assert.False(result);
+    }
+
+    [Fact]
+    public void NotSaveWithUrlEmpty()
+    {
+        var newGuid = Guid.NewGuid();
+        var mockRepo = new Mock<IBookRepository>();
+
+        var book = new Book(id: newGuid, name: "1984", author: "George Orwell", 
+            urlimg: "");
+            
+        mockRepo.Setup(repo => repo.Add(book)).Returns(false);
+
+        var service = new BookService(mockRepo.Object);
+        var result = service.Add(book);
+
+        Assert.False(result);
     }
 }

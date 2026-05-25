@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookStore.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260524013631_TableReader")]
-    partial class TableReader
+    [Migration("20260525152648_TablesBookAndReaderStringNotEmpty")]
+    partial class TablesBookAndReaderStringNotEmpty
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,7 +63,7 @@ namespace BookStore.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime?>("Birthday")
+                    b.Property<DateTime>("Birthday")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime?>("CreatedAt")

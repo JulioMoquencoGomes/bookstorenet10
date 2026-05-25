@@ -1,12 +1,22 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
+
 namespace BookStore.Domain.Entities;
 
 public class Book: TrackableEntity
 {
     public Guid Id { get; set; }
-    public String Name { get; set; }
-    public String Author { get; set; }
-    public string Urlimg { get; set; }
+
+    [Required(AllowEmptyStrings = false, ErrorMessage = "The field cannot be empty.")]
+    [MinLength(1)]
+    public String Name { get; set; } = string.Empty;
+    
+    [Required(AllowEmptyStrings = false, ErrorMessage = "The field cannot be empty.")]
+    [MinLength(1)]
+    public String Author { get; set; } = string.Empty;
+    
+    [Required(AllowEmptyStrings = false, ErrorMessage = "The field cannot be empty.")]
+    [MinLength(1)]
+    public String Urlimg { get; set; } = string.Empty;
     
     public Book(Guid id, String name, String author, String urlimg)
     {
