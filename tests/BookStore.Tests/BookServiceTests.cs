@@ -15,13 +15,14 @@ public class BookServiceTests
         var mockRepo = new Mock<IBookRepository>();
 
         mockRepo.Setup(repo => repo.GetById(newGuid))
-        .Returns( new Book(id: newGuid, name: "Nome de teste", author: "Autor de teste", urlimg: ""));
+        .Returns( new Book(id: newGuid, name: "Nome de teste", author: "Autor de teste", urlimg: "https://url.com"));
 
         var service = new BookService(mockRepo.Object);
         var result = service.GetBook(newGuid);
 
         Assert.Equal("Nome de teste" , result?.Name);
         Assert.Equal("Autor de teste" , result?.Author);
+        Assert.Equal("https://url.com" , result?.Urlimg);
     }
 
     [Fact]
@@ -42,7 +43,7 @@ public class BookServiceTests
     }
 
     [Fact]
-    public void NotSaveWithNameEmpty()
+    public void NotSaveWhenNameIsEmpty()
     {
         var newGuid = Guid.NewGuid();
         var mockRepo = new Mock<IBookRepository>();
@@ -59,7 +60,7 @@ public class BookServiceTests
     }
 
     [Fact]
-    public void NotSaveWithAuthorEmpty()
+    public void NotSaveWhenAuthorIsEmpty()
     {
         var newGuid = Guid.NewGuid();
         var mockRepo = new Mock<IBookRepository>();
@@ -76,7 +77,7 @@ public class BookServiceTests
     }
 
     [Fact]
-    public void NotSaveWithUrlEmpty()
+    public void NotSaveWhenUrlIsEmpty()
     {
         var newGuid = Guid.NewGuid();
         var mockRepo = new Mock<IBookRepository>();
