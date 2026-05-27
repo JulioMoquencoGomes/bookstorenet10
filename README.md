@@ -1,6 +1,9 @@
 # BookStore - net10
 \
-**Requisitos mínimos:**
+*Sendo construindo sem ajuda de IA.*
+\
+\
+**Requisitos mínimos para executar o projeto:**
 \
 \
 Docker Desktop: 

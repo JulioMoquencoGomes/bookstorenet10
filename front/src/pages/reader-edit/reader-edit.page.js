@@ -38,7 +38,9 @@ class ReaderEditPage extends React.Component {
             let res = await readersService.getOne(readerId);
             let reader = res.data.reader;
 
-            reader.birthday = reader.birthday.toString().split('T')[0] ?? "";
+            if(reader.birthday) {
+                reader.birthday = reader.birthday.toString().split('T')[0] ?? "";
+            }
 
             this.setState(reader);
         } catch (error) {
@@ -49,18 +51,22 @@ class ReaderEditPage extends React.Component {
 
     async sendReader(){
         
-        const birthday = new Date(this.state.birthday);
-        const dateTimeBirthday = birthday.toISOString(); 
+        var dateTimeBirthday = "";
 
         let data = {
             name : this.state.name,
-            birthday : dateTimeBirthday,
-            urlimg: this.state.urlimg ?? ""
+            urlimg: this.state.urlimg != "" ? this.state.urlimg : "no-image"
         }
 
         if(!data.name || data.name === ''){
             alert("Nome é obrigatório!")
             return;
+        }
+
+        if(this.state.birthday) {
+            const birthday = new Date(this.state.birthday);
+            dateTimeBirthday = birthday.toISOString();
+            data.birthday = dateTimeBirthday;
         }
 
         try {

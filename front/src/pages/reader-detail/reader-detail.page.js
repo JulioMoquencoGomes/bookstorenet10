@@ -31,8 +31,10 @@ class ReaderDetailPage extends React.Component {
         try {
             let res = await readersService.getOne(readerId);
 
-            res.data.reader.birthday = 
-                res.data.reader.birthday.toString().split('T')[0] ?? "";
+            if(res.data.reader.birthday) {
+                res.data.reader.birthday = 
+                    res.data.reader.birthday.toString().split('T')[0] ?? "";
+            }
 
             this.setState({ reader: res.data.reader })
         } 

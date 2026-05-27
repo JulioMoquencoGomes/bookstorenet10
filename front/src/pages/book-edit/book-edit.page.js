@@ -49,7 +49,7 @@ class BookEditPage extends React.Component {
         let data = {
             name : this.state.name,
             author : this.state.author,
-            urlimg: this.state.urlimg ?? ""
+            urlimg: this.state.urlimg != "" ? this.state.urlimg : "no-image"
         }
 
         if(!data.name || data.name === ''){
