@@ -13,7 +13,7 @@ namespace BookStore.Application.UseCases
         }
 
         public IEnumerable<Reader> GetReaders() => _readerRepository.GetAll();
-
+        IQueryable<Reader> GetAsQueryable() => _readerRepository.GetAsQueryable();
         public Reader? GetReader(Guid id) => _readerRepository.GetById(id);
         public bool Add(Reader reader) => _readerRepository.Add(reader);
         public bool Update(Reader reader) => _readerRepository.Update(reader);

@@ -13,7 +13,7 @@ namespace BookStore.Application.UseCases
         }
 
         public IEnumerable<Book> GetBooks() => _bookRepository.GetAll();
-
+        IQueryable<Book> GetAsQueryable() => _bookRepository.GetAsQueryable();
         public Book? GetBook(Guid id) => _bookRepository.GetById(id);
         public bool Add(Book book) => _bookRepository.Add(book);
         public bool Update(Book book) => _bookRepository.Update(book);
