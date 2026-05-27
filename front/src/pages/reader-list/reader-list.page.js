@@ -30,7 +30,9 @@ class ReaderListPage extends React.Component {
             let res = await readersService.list();
             
             res.data.reader.forEach((r, i) => {
-                r.birthday = r.birthday.toString().split('T')[0] ?? "";
+                if(r.birthday) {
+                    r.birthday = r.birthday.toString().split('T')[0] ?? "";
+                }
             });
 
             this.setState({ readers: res.data.reader })
