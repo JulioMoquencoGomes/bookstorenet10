@@ -1,6 +1,7 @@
 # BookStore - net10
 \
-**Sendo construindo sem ajuda de IA.**
+*Sendo construindo sem ajuda de IA.*
+\
 \
 **Requisitos mínimos para executar o projeto:**
 \
