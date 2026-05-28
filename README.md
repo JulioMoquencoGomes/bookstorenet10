@@ -12,7 +12,7 @@ https://docs.docker.com/desktop/
 \
 **Comandos para buildar e executar o projeto**
 
-### *Backend:*
+### *Backend*
 cd src
 \
 docker compose build
@@ -26,7 +26,7 @@ http://localhost:8080/api/book
 \
 ![Books](Images/backend.png)
 
-### *Frontend utilizando React:*
+### *Frontend utilizando React*
 cd front
 \
 docker build -t frontendapp .
@@ -40,7 +40,7 @@ http://localhost:3001/
 \
 ![Books](Images/front2.png)
 
-### *Resultado de alguns testes unitarios:*
+### *Testes unitários utilizando xUnit*
 Testa alguns cenários, se é possível inserir faltandos alguns campos, campos de textos não podem estar vazios.
 \
 \
