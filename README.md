@@ -41,7 +41,7 @@ http://localhost:3001/
 ![Books](Images/front2.png)
 
 ### *Testes unitários utilizando xUnit*
-Executa alguns cenários, se é possível inserir registros faltandos alguns campos, campos de textos não podem estar vazios.
+Executa alguns cenários, se é possível inserir registros faltandos alguns campos, valida se os mesmos não podem estar vazios.
 \
 \
 ![teste](Images/testexunit.png)
