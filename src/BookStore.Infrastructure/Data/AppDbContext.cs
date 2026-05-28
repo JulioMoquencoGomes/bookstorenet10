@@ -9,6 +9,7 @@ namespace BookStore.Infrastructure.Data
     
         public DbSet<Book> Books => Set<Book>();
         public DbSet<Reader> Readers => Set<Reader>();
+        public DbSet<Lend> Lends => Set<Lend>();
     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

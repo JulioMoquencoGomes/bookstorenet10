@@ -1,4 +1,3 @@
-using Npgsql;
 using Microsoft.EntityFrameworkCore;
 using BookStore.Application.Interfaces;
 using BookStore.Application.UseCases;
@@ -28,6 +27,9 @@ builder.Services.AddScoped<BookService>();
 
 builder.Services.AddScoped<IReaderRepository, ReaderRepository>();
 builder.Services.AddScoped<ReaderService>();
+
+builder.Services.AddScoped<ILendRepository, LendRepository>();
+builder.Services.AddScoped<LendService>();
 
 
 builder.Services.AddCors(options =>
