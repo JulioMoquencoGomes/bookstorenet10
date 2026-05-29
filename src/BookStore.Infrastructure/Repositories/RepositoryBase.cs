@@ -13,17 +13,17 @@ namespace BookStore.Infrastructure.Repositories
             _dbContext = dbcontext;
         }
 
-        public IEnumerable<T> GetAll() => _dbContext.Set<T>().ToList();
+        public virtual IEnumerable<T> GetAll() => _dbContext.Set<T>().ToList();
 
-        public IQueryable<T> GetAsQueryable()
+        public virtual IQueryable<T> GetAsQueryable()
         {
             _dbContext.ChangeTracker.LazyLoadingEnabled = false;
             return ApplySoftDeleteFilter(_dbContext.Set<T>());
         }
 
-        public T? GetById(Guid id) => _dbContext.Set<T>().Find(id);
+        public virtual T? GetById(Guid id) => _dbContext.Set<T>().Find(id);
         
-        public bool Add(T entity)
+        public virtual bool Add(T entity)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace BookStore.Infrastructure.Repositories
             }
         }
 
-        public bool Update(T entity)
+        public virtual bool Update(T entity)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace BookStore.Infrastructure.Repositories
             }
         }
 
-        public bool Delete(Guid id)
+        public virtual bool Delete(Guid id)
         {
             var model = this.GetById(id);
             if(model != null) {
@@ -63,7 +63,7 @@ namespace BookStore.Infrastructure.Repositories
             return false;
         }
 
-        public bool Remove(Guid id) => this.Delete(id);
+        public virtual bool Remove(Guid id) => this.Delete(id);
 
         protected virtual IQueryable<T> ApplySoftDeleteFilter(IQueryable<T> query)
         {

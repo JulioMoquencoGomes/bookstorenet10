@@ -6,15 +6,52 @@ namespace BookStore.Application.UseCases
     public class LendService
     {
         private readonly ILendRepository _lendRepository;
+        private readonly IBookRepository _bookRepository;
+        private readonly IReaderRepository _readerRepository;
 
-        public LendService(ILendRepository lendRepository)
+        public LendService(ILendRepository lendRepository,
+        IBookRepository bookRepository,
+        IReaderRepository readerRepository
+        )
         {
             _lendRepository = lendRepository;
+            _bookRepository = bookRepository;
+            _readerRepository = readerRepository;
         }
 
-        public IEnumerable<Lend> GetLends() => _lendRepository.GetAll();
+        public IEnumerable<Lend> GetLends()
+        {
+            var lends = _lendRepository.GetAll();
+            foreach(var lend in lends)
+            {
+                if(lend != null)
+                {
+                    Lend newLend = this.GetBookAndReaderByLend(lend);
+                    lend.Book = newLend.Book;
+                    lend.Reader = newLend.Reader;
+                }
+            }
+            return lends;
+        }
         IQueryable<Lend> GetAsQueryable() => _lendRepository.GetAsQueryable();
-        public Lend? GetLend(Guid id) => _lendRepository.GetById(id);
+        
+        public Lend? GetLend(Guid id)
+        {
+            var lend = _lendRepository.GetById(id);
+            if(lend != null)
+            {
+                lend = this.GetBookAndReaderByLend(lend);
+            }
+            return lend;
+        }
+
+        private Lend GetBookAndReaderByLend(Lend lend)
+        {
+            lend.Book = _bookRepository.GetById(lend.BookId);
+            lend.Reader = _readerRepository.GetById(lend.ReaderId);
+            return lend;
+        }
+
         public bool Add(Lend lend) => _lendRepository.Add(lend);
         public bool Update(Lend lend) => _lendRepository.Update(lend);
         public bool Delete(Guid id) => _lendRepository.Delete(id);

@@ -11,6 +11,10 @@ import BookEditPage from './pages/book-edit/book-edit.page';
 import ReaderListPage from './pages/reader-list/reader-list.page';
 import ReaderDetailPage from './pages/reader-detail/reader-detail.page';
 import ReaderEditPage from './pages/reader-edit/reader-edit.page';
+
+import LendListPage from './pages/lend-list/lend-list.page';
+import LendDetailPage from './pages/lend-detail/lend-detail.page';
+import LendEditPage from './pages/lend-edit/lend-edit.page';
  
 class App extends React.Component {
   render() {
@@ -31,6 +35,8 @@ class App extends React.Component {
                 <a href="/" className="nav-item nav-link">Home</a>
                 <a href="/book-list" className="nav-item nav-link">Livros</a>
                 <a href="/reader-list" className="nav-item nav-link">Leitores</a>
+                <a href="/lend-list" className="nav-item nav-link">Empréstimos</a>
+
               </div>
             </div>
           </nav>
@@ -47,6 +53,11 @@ class App extends React.Component {
             <Route path="/reader-detail/:id" Component={ReaderDetailPage}/>
             <Route path="/reader-add" Component={ReaderEditPage}/>
             <Route path="/reader-edit/:id" Component={ReaderEditPage}/>
+
+            <Route path="/lend-list" Component={LendListPage}/>
+            <Route path="/lend-detail/:id" Component={LendDetailPage}/>
+            <Route path="/lend-add" Component={LendEditPage}/>
+            <Route path="/lend-edit/:id" Component={LendEditPage}/>
 
           </Routes>
 

@@ -6,12 +6,10 @@ public class Lend: TrackableEntity
 {
     public Guid Id { get; set; }
 
-    [Required]
-    public int BookId { get; set; }
+    public Guid BookId { get; set; }
     public Book? Book { get; set; }
 
-    [Required]
-    public int ReaderId { get; set; }
+    public Guid ReaderId { get; set; }
     public Reader? Reader { get; set; }
 
     [Required]
@@ -22,7 +20,7 @@ public class Lend: TrackableEntity
 
     public DateTime? DeliveryDate { get; set; }
     
-    public Lend(Guid id, int bookId, int readerId, 
+    public Lend(Guid id, Guid bookId, Guid readerId, 
         DateTime startDate, 
         DateTime endDate,
         DateTime? deliveryDate = null
