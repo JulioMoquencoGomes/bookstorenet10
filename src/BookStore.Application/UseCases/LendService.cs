@@ -52,7 +52,21 @@ namespace BookStore.Application.UseCases
             return lend;
         }
 
-        public bool Add(Lend lend) => _lendRepository.Add(lend);
+        public bool Add(Lend lend){
+
+            var bookId = lend.BookId;
+            var thereIsLend = _lendRepository.GetAsQueryable()
+                .Where(w=>w.BookId == bookId && w.DeliveryDate == null).FirstOrDefault();
+
+
+            if(thereIsLend != null)
+            {
+                return false;
+            }
+
+            var cond = _lendRepository.Add(lend);
+            return cond;
+        }
         public bool Update(Lend lend) => _lendRepository.Update(lend);
         public bool Delete(Guid id) => _lendRepository.Delete(id);
         public bool Remove(Guid id) => _lendRepository.Remove(id);

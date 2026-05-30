@@ -79,7 +79,6 @@ class LendEditPage extends React.Component {
 
         }
         catch (error) {
-            console.log(error);
             alert("Não foi possível carregar o empréstimo.");
         }
     }
@@ -87,7 +86,10 @@ class LendEditPage extends React.Component {
     async loadBooks() {
         try {
             let res = await booksService.list();
-            this.setState({ books: res.data.book })
+            this.setState({ books: res.data.book });
+            if(this.state.books.length > 0) {
+                this.state.bookId = this.state.books[0].id;
+            }
         } catch (error) {
             console.log(error);
         }
@@ -103,7 +105,10 @@ class LendEditPage extends React.Component {
                 }
             });
 
-            this.setState({ readers: res.data.reader })
+            this.setState({ readers: res.data.reader });
+            if(this.state.readers.length > 0) {
+                this.state.readerId = this.state.readers[0].id;
+            }
         } 
         catch (error) {
             console.log(error);
@@ -136,18 +141,26 @@ class LendEditPage extends React.Component {
         try {
             if(this.state.id){
                 data.id = this.state.id;
-                await lendsService.edit(data, this.state.id);
-                alert("Empréstimo editado com sucesso!");
+                var result = await lendsService.edit(data, this.state.id);
+                messageAfterSave(result);
             }
             else{
-                await lendsService.create(data);
-                alert("Empréstimo criado com sucesso!")
+                var result = await lendsService.create(data);
+                messageAfterSave(result);
             }
             this.props.navigate('/lend-list');
         } 
         catch (error) {
-            console.log(error);
             alert("Erro ao cadastrar o empréstimo.");
+        }
+    }
+
+    messageAfterSave(result){
+        if(result) {
+            alert("Empréstimo salvo com sucesso!");
+        }
+        else {
+            alert("Falha ao salvar");
         }
     }
 
