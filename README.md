@@ -1,8 +1,11 @@
 # BookStore - net10
 \
 *Aplicação utilizando arquitetura: Clean Architecture.*
+
 *Existe testes unitários simulando alguns cenários possíveis.*
+
 *Banco de dados: PostgreSql.*
+
 *Sendo construindo sem ajuda de algum agente de IA.*
 \
 \
