@@ -1,6 +1,9 @@
 # BookStore - net10
 \
-*Sendo construindo sem ajuda de IA.*
+*Aplicação utilizando arquitetura: Clean Architecture.*
+*Existe testes unitários simulando alguns cenários possíveis.*
+*Banco de dados: PostgreSql.*
+*Sendo construindo sem ajuda de algum agente de IA.*
 \
 \
 **Requisitos mínimos para executar o projeto:**
@@ -39,6 +42,9 @@ http://localhost:3001/
 \
 \
 ![Books](Images/front2.png)
+\
+\
+![Books](Images/front3.png)
 
 ### *Testes unitários utilizando xUnit*
 Executa alguns cenários, se é possível inserir registros faltandos alguns campos, valida se os mesmos não podem estar vazios.
