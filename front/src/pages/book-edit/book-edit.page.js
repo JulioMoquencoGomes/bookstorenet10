@@ -109,25 +109,27 @@ class BookEditPage extends React.Component {
                             onChange={e => this.setState({ name: e.target.value })} />
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="content">Autor</label>
-                        <textarea
-                            type="text"
-                            className="form-control"
-                            id="content"
-                            value={this.state.author}
-                            rows={4}
-                            style={{resize: 'none'}}
-                            onChange={e => this.setState({ author: e.target.value })} />
-                    </div>
+                    <div className='book-card-table'>
+                        <div className="book-card-column">
+                            <label htmlFor="content">Autor</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="content"
+                                value={this.state.author}
+                                rows={4}
+                                style={{resize: 'none'}}
+                                onChange={e => this.setState({ author: e.target.value })} />
+                        </div>
 
-                    <div className="form-group">
-                        <label>Url da imagem</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.urlimg}
-                            onChange={e => this.setState({ urlimg: e.target.value })} />
+                        <div className="book-card-column">
+                            <label>Url da imagem</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.urlimg}
+                                onChange={e => this.setState({ urlimg: e.target.value })} />
+                        </div>
                     </div>
 
                 </form>

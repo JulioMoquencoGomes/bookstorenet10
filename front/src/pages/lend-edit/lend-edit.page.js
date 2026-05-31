@@ -185,57 +185,67 @@ class LendEditPage extends React.Component {
                 </div>
 
                 <form onSubmit={e => e.preventDefault()}>
-                    <div className="form-group">
-                        <label htmlFor="title">Livro</label>
 
-                        <select id="selectBookId" className="form-control"
-                        onChange={e => this.setState({ bookId: e.target.value })}>
-                        {
-                            this.state.books.map(book => (
-                                <option value={ book.id }>{book.name}</option>
-                            ))
-                        }
-                        </select>
+                    <div className="lend-card-table">
+
+                        <div className="lend-card-column">
+                            <label htmlFor="title">Livro</label>
+
+                            <select id="selectBookId" className="form-control"
+                            onChange={e => this.setState({ bookId: e.target.value })}>
+                            {
+                                this.state.books.map(book => (
+                                    <option value={ book.id }>{book.name}</option>
+                                ))
+                            }
+                            </select>
+                        </div>
+
+                        <div className="lend-card-column">
+                            <label htmlFor="title">Leitor</label>
+
+                            <select id="selectReaderId" className="form-control"
+                            onChange={e => this.setState({ readerId: e.target.value })}>
+                            {
+                                this.state.readers.map(reader => (
+                                    <option value={ reader.id }>{reader.name}</option>
+                                ))
+                            }
+                            </select>
+                        </div>
+
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="title">Leitor</label>
 
-                        <select id="selectReaderId" className="form-control"
-                        onChange={e => this.setState({ readerId: e.target.value })}>
-                        {
-                            this.state.readers.map(reader => (
-                                <option value={ reader.id }>{reader.name}</option>
-                            ))
-                        }
-                        </select>
+                    <div className="lend-card-table">
+                        <div className="lend-card-column">
+                            <label>Dia do empréstimo</label>
+                            <input
+                                type="date"
+                                className="form-control"
+                                value={this.state.startDate}
+                                onChange={e => this.setState({ startDate: e.target.value })} />
+                        </div>
+
+                        <div className="lend-card-column">
+                            <label>Fim do empréstimo</label>
+                            <input
+                                type="date"
+                                className="form-control"
+                                value={this.state.endDate}
+                                onChange={e => this.setState({ endDate: e.target.value })} />
+                        </div>
                     </div>
 
-                    <div className="form-group">
-                        <label>Dia do empréstimo</label>
-                        <input
-                            type="date"
-                            className="form-control"
-                            value={this.state.startDate}
-                            onChange={e => this.setState({ startDate: e.target.value })} />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Fim do empréstimo</label>
-                        <input
-                            type="date"
-                            className="form-control"
-                            value={this.state.endDate}
-                            onChange={e => this.setState({ endDate: e.target.value })} />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Dia da entrega</label>
-                        <input
-                            type="date"
-                            className="form-control"
-                            value={this.state.deliveryDate}
-                            onChange={e => this.setState({ deliveryDate: e.target.value })} />
+                    <div className="lend-card-table">
+                        <div className='lend-card-column'>
+                            <label>Dia da entrega</label>
+                            <input
+                                type="date"
+                                className="form-control"
+                                value={this.state.deliveryDate}
+                                onChange={e => this.setState({ deliveryDate: e.target.value })} />
+                        </div>
                     </div>
 
                 </form>

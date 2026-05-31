@@ -1,0 +1,8 @@
+.lend-card-table{
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: row;
+}
+.lend-card-column {
+    width: 50%;
+}

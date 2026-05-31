@@ -107,35 +107,40 @@ class ReaderEditPage extends React.Component {
                     </div>
                 </div>
                 <form onSubmit={e => e.preventDefault()}>
-                    <div className="form-group">
-                        <label htmlFor="title">Nome</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="title"
-                            value={this.state.name}
-                            onChange={e => this.setState({ name: e.target.value })} />
+
+                    <div className='reader-card-table'>
+                        <div className="reader-card-column">
+                            <label htmlFor="title">Nome</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="title"
+                                value={this.state.name}
+                                onChange={e => this.setState({ name: e.target.value })} />
+                        </div>
+
+                        <div className="reader-card-column">
+                            <label htmlFor="content">Data de Nascimento</label>
+                            <input
+                                type="date"
+                                className="form-control"
+                                id="content"
+                                value={this.state.birthday}
+                                rows={4}
+                                style={{resize: 'none'}}
+                                onChange={e => this.setState({ birthday: e.target.value })} />
+                        </div>
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="content">Data de Nascimento</label>
-                        <input
-                            type="date"
-                            className="form-control"
-                            id="content"
-                            value={this.state.birthday}
-                            rows={4}
-                            style={{resize: 'none'}}
-                            onChange={e => this.setState({ birthday: e.target.value })} />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Url da imagem</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.urlimg}
-                            onChange={e => this.setState({ urlimg: e.target.value })} />
+                    <div className='reader-card-table'>
+                        <div className="reader-card-column">
+                            <label>Url da imagem</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.urlimg}
+                                onChange={e => this.setState({ urlimg: e.target.value })} />
+                        </div>
                     </div>
 
                 </form>

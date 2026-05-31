@@ -1,0 +1,8 @@
+.book-card-table{
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: row;
+}
+.book-card-column {
+    width: 50%;
+}
