@@ -1,2 +1,14 @@
 /src/BookStore.Api/bin
 /src/BookStore.Api/obj
+
+/src/BookStore.Application/bin
+/src/BookStore.Application/obj
+
+/src/BookStore.Domain/bin
+/src/BookStore.Domain/obj
+
+/src/BookStore.Infrastructure/bin
+/src/BookStore.Infrastructure/obj
+
+/tests/BookStore.Tests/bin
+/tests/BookStore.Tests/obj
