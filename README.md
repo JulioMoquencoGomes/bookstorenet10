@@ -1,6 +1,6 @@
 # BookStore - net10
 \
-*Aplicação utilizando arquitetura: Clean Architecture.*
+*Aplicação que cadastra livros e leitores em uma base de dados, o leitor pode realizar empréstimo dos livros por um certo periodo conforme o usuário definir, essa aplicação utiliza a arquitetura: Clean Architecture.*
 
 *Existe testes unitários simulando alguns cenários possíveis.*
 
